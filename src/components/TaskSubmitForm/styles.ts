@@ -1,21 +1,24 @@
 import styled from "styled-components";
 
-export const Container = styled.form`
-  width: 100%;
+export const FormContainer = styled.form`
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 0.5rem;
-  padding-top: -10px;
-  margin-top: -1rem;
+  margin-top: -2rem;
 
   input {
     width: 100%;
-    height: 54px;
+    height: 100%;
+    padding: 1rem;
+    color: ${(props) => props.theme["gray-100"]};
     background: ${(props) => props.theme["gray-500"]};
     border: 1px solid ${(props) => props.theme["gray-700"]};
-    color: ${(props) => props.theme["gray-100"]};
     border-radius: 8px;
-    border: 0;
-    padding: 1rem;
+    &:focus-visible {
+      border: 1px solid $purple;
+      outline: none;
+    }
   }
   button {
     display: flex;
@@ -26,8 +29,14 @@ export const Container = styled.form`
     border-radius: 8px;
     background: ${(props) => props.theme["blue-500"]};
     color: ${(props) => props.theme["gray-100"]};
-  }
-  svg {
-    margin-bottom: -2px;
+    transition: background-color 0.15s;
+
+    &:focus-visible,
+    &:hover {
+      background-color: ${(props) => props.theme["blue-300"]};
+    }
+    svg {
+      margin-but: -2rem;
+    }
   }
 `;
