@@ -7,7 +7,7 @@ import { FormContainer } from "./styles";
 export type TaskTypes = {
   id: string;
   title: string;
-  // isComplete: boolean;
+  isComplete: boolean;
 };
 
 type TaskSubmitFormProps = {
@@ -21,7 +21,7 @@ export function TaskSubmitForm({ tasks, setTasks }: TaskSubmitFormProps) {
   function handleTaskSubmit(event: FormEvent) {
     event.preventDefault();
 
-    setTasks([{ id: uuid(), title: newTask }, ...tasks]);
+    setTasks([{ id: uuid(), title: newTask, isComplete: false }, ...tasks]);
     setNewTask("");
   }
 

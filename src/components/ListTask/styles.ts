@@ -75,24 +75,24 @@ export const Task = styled.div`
 `;
 
 export const ButtonTaskComplete = styled.button`
-    display: flex;
-    justify-content: center;
-    padding: 0.125rem;
-    font-size: 87.5%;
-    border: 1px solid ${(props) => props.theme["blue-300"]};
-    border-radius: 9999px;
-    background: none;
-    transition: opacity 0.15s, background-color 0.15s, border 0.15s;
+  display: flex;
+  justify-content: center;
+  padding: 0.125rem;
+  font-size: 87.5%;
+  border: 2px solid ${(props) => props.theme["red-300"]};
+  border-radius: 9999px;
+  background: none;
+  transition: opacity 0.15s, background-color 0.15s, border 0.15s;
+  background: red;
 
-    svg {
-      opacity: 0;
-    }
+  svg {
+    opacity: 0;
+  }
 
-    &:focus-visible,
-    &:hover {
-      opacity: 0.7;
-      background-color: rgba(${(props) => props.theme["blue-300"]}, 0.1);
-    }
+  &:focus-visible,
+  &:hover {
+    opacity: 0.7;
+    background-color: ${(props) => props.theme["red-300"]};
   }
 
   .btnComplete {

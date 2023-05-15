@@ -1,8 +1,7 @@
+import { Check, Trash } from "@phosphor-icons/react";
 import { TaskTypes } from "./TaskSubmitForm";
 
 import { ButtonTaskComplete, Container, Task, TasksInfo } from "./styles";
-import { Check } from "../../../node_modules/@phosphor-icons/react/dist/index";
-import Trash from "../../../node_modules/@phosphor-icons/react/dist/icons/Trash";
 
 type TaskSubmitFormProps = {
   tasks: TaskTypes[];
@@ -29,7 +28,6 @@ export function ListTask({ tasks, setTasks }: TaskSubmitFormProps) {
           >
             <Check weight="bold" />
           </ButtonTaskComplete>
-          <input type="checkbox" />
           <p>{task.title}</p>
           <button>
             <Trash size={24} weight="light" />
