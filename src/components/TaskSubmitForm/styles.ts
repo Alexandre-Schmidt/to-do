@@ -16,7 +16,7 @@ export const FormContainer = styled.form`
     border: 1px solid ${(props) => props.theme["gray-700"]};
     border-radius: 8px;
     &:focus-visible {
-      border: 1px solid $purple;
+      border: 1px solid ${(props) => props.theme["purple-500"]};
       outline: none;
     }
   }

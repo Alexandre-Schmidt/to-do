@@ -1,5 +1,8 @@
-import { Trash } from "@phosphor-icons/react";
-import { Container, Task, TasksInfo } from "./styles";
+import { TaskTypes } from "./TaskSubmitForm";
+
+import { ButtonTaskComplete, Container, Task, TasksInfo } from "./styles";
+import { Check } from "../../../node_modules/@phosphor-icons/react/dist/index";
+import Trash from "../../../node_modules/@phosphor-icons/react/dist/icons/Trash";
 
 type TaskSubmitFormProps = {
   tasks: TaskTypes[];
@@ -7,21 +10,6 @@ type TaskSubmitFormProps = {
 };
 
 export function ListTask({ tasks, setTasks }: TaskSubmitFormProps) {
-  const tasks = [
-    {
-      id: 1,
-      title: "Tarefa 1",
-    },
-    {
-      id: 2,
-      title: "Tarefa 2",
-    },
-    {
-      id: 3,
-      title: "Tarefa 3",
-    },
-  ];
-
   return (
     <Container>
       <TasksInfo>
@@ -36,6 +24,11 @@ export function ListTask({ tasks, setTasks }: TaskSubmitFormProps) {
 
       {tasks.map((task) => (
         <Task key={task.id}>
+          <ButtonTaskComplete
+            className={task.isComplete ? "btnComplete" : "btnIncomplete"}
+          >
+            <Check weight="bold" />
+          </ButtonTaskComplete>
           <input type="checkbox" />
           <p>{task.title}</p>
           <button>

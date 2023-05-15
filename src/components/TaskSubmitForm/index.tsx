@@ -7,6 +7,7 @@ import { FormContainer } from "./styles";
 export type TaskTypes = {
   id: string;
   title: string;
+  // isComplete: boolean;
 };
 
 type TaskSubmitFormProps = {
@@ -21,20 +22,18 @@ export function TaskSubmitForm({ tasks, setTasks }: TaskSubmitFormProps) {
     event.preventDefault();
 
     setTasks([{ id: uuid(), title: newTask }, ...tasks]);
-    console.log("entrouuuu");
     setNewTask("");
   }
 
   function handleTaskInput(event: ChangeEvent<HTMLInputElement>) {
     setNewTask(event.target.value);
-    console.log(newTask);
   }
 
   return (
     <FormContainer onSubmit={handleTaskSubmit}>
       <input
         type="text"
-        placeholder="Adicione uma nova tarefa"
+        placeholder="Adicione uma nova tarefa..."
         value={newTask}
         onChange={handleTaskInput}
         required
