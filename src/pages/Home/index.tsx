@@ -8,25 +8,6 @@ import { HomeContent } from "./styles";
 
 export function Home() {
   const [tasks, setTasks] = useState([]);
-  /* const tasks = [
-    {
-      id: 1,
-      title: "Tarefa 1",
-    },
-    {
-      id: 2,
-      title: "Tarefa 2",
-    },
-    {
-      id: 3,
-      title: "Tarefa 3",
-    },
-    {
-      id: 4,
-      title: "Tarefa 4",
-    },
-  ]; */
-
   return (
     <>
       <Header />

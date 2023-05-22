@@ -1,6 +1,6 @@
 import { v4 as uuid } from "uuid";
 import { PlusCircle } from "@phosphor-icons/react";
-import { ChangeEvent, FormEvent, useState } from "react";
+import { React, ChangeEvent, FormEvent, useState } from "react";
 
 import { FormContainer } from "./styles";
 

@@ -74,16 +74,15 @@ export const Task = styled.div`
   }
 `;
 
-export const ButtonTaskComplete = styled.button`
+export const ButtonTaskIncomplete = styled.button`
   display: flex;
   justify-content: center;
   padding: 0.125rem;
   font-size: 87.5%;
-  border: 2px solid ${(props) => props.theme["red-300"]};
+  border: 2px solid ${(props) => props.theme["blue-300"]};
   border-radius: 9999px;
   background: none;
   transition: opacity 0.15s, background-color 0.15s, border 0.15s;
-  background: red;
 
   svg {
     opacity: 0;
@@ -92,23 +91,41 @@ export const ButtonTaskComplete = styled.button`
   &:focus-visible,
   &:hover {
     opacity: 0.7;
-    background-color: ${(props) => props.theme["red-300"]};
+    background-color: ${(props) => props.theme["blue-300"]};
+  }
+`;
+
+export const ButtonTaskComplete = styled.button`
+  color: ${(props) => props.theme["gray-100"]};
+  border: 1px solid ${(props) => props.theme["purple-500"]};
+  background-color: ${(props) => props.theme["purple-500"]};
+
+  svg {
+    opacity: 1;
   }
 
-  .btnComplete {
-    color: ${(props) => props.theme["gray-100"]};
-    border: 1px solid ${(props) => props.theme["purple-500"]};
-    background-color: ${(props) => props.theme["purple-500"]};
+  &:focus-visible,
+  &:hover {
+    opacity: 1;
+    background-color: ${(props) => props.theme["purple-300"]};
+    border: 1px solid ${(props) => props.theme["purple-300"]};
+  }
+`;
 
-    svg {
-      opacity: 1;
-    }
+export const ButtonDelete = styled.button`
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem;
+  font-size: 120%;
+  color: $gray-300;
+  border: none;
+  background: none;
+  transition: background-color 0.15s, border-radius 0.15s;
 
-    &:focus-visible,
-    &:hover {
-      opacity: 1;
-      background-color: ${(props) => props.theme["purple-300"]};
-      border: 1px solid ${(props) => props.theme["purple-300"]};
-    }
+  &:focus-visible,
+  &:hover {
+    color: $danger;
+    border-radius: $br-1;
+    background-color: $gray-400;
   }
 `;

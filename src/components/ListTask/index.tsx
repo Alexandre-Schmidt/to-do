@@ -1,7 +1,16 @@
 import { Check, Trash } from "@phosphor-icons/react";
-import { TaskTypes } from "./TaskSubmitForm";
+import { React } from "react";
 
-import { ButtonTaskComplete, Container, Task, TasksInfo } from "./styles";
+import { TaskTypes } from "../TaskSubmitForm";
+
+import {
+  ButtonDelete,
+  ButtonTaskComplete,
+  ButtonTaskIncomplete,
+  Container,
+  Task,
+  TasksInfo,
+} from "./styles";
 
 type TaskSubmitFormProps = {
   tasks: TaskTypes[];
@@ -9,29 +18,60 @@ type TaskSubmitFormProps = {
 };
 
 export function ListTask({ tasks, setTasks }: TaskSubmitFormProps) {
+  function handleTaskComplete(id: string) {
+    setTasks(
+      tasks.map((task) => {
+        if (task.id === id) {
+          task.isComplete = !task.isComplete;
+        }
+        return task;
+      })
+    );
+  }
+
+  function handleTaskDelete(id: string) {
+    setTasks(
+      tasks.filter((task) => {
+        return task.id !== id;
+      })
+    );
+  }
+
+  const taskCount = tasks.length;
+  const taskCompleteCount = tasks.filter((task) => {
+    return task.isComplete;
+  }).length;
+
   return (
     <Container>
       <TasksInfo>
         <p>
-          Tarefas criadas<span>0</span>
+          Tarefas criadas<span>{taskCount}</span>
         </p>
 
         <p>
-          Concluídas <span>2 de 5</span>
+          Concluídas{" "}
+          <span>
+            {taskCompleteCount} de {taskCount}
+          </span>
         </p>
       </TasksInfo>
 
       {tasks.map((task) => (
         <Task key={task.id}>
-          <ButtonTaskComplete
-            className={task.isComplete ? "btnComplete" : "btnIncomplete"}
-          >
-            <Check weight="bold" />
-          </ButtonTaskComplete>
+          {task.isComplete ? (
+            <ButtonTaskComplete onClick={() => handleTaskComplete(task.id)}>
+              <Check weight="bold" />
+            </ButtonTaskComplete>
+          ) : (
+            <ButtonTaskIncomplete onClick={() => handleTaskComplete(task.id)}>
+              <Check weight="bold" />
+            </ButtonTaskIncomplete>
+          )}
           <p>{task.title}</p>
-          <button>
+          <ButtonDelete onClick={() => handleTaskDelete(task.id)}>
             <Trash size={24} weight="light" />
-          </button>
+          </ButtonDelete>
         </Task>
       ))}
     </Container>
