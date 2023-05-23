@@ -1,5 +1,5 @@
+import * as React from "react";
 import { Check, Trash } from "@phosphor-icons/react";
-import { React } from "react";
 
 import { TaskTypes } from "../TaskSubmitForm";
 
@@ -68,6 +68,7 @@ export function ListTask({ tasks, setTasks }: TaskSubmitFormProps) {
               <Check weight="bold" />
             </ButtonTaskIncomplete>
           )}
+
           <p>{task.title}</p>
           <ButtonDelete onClick={() => handleTaskDelete(task.id)}>
             <Trash size={24} weight="light" />

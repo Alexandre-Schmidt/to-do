@@ -1,7 +1,9 @@
 import { useState } from "react";
 
 import { Header } from "../../components/Header/index";
+
 import { ListTask } from "../../components/ListTask";
+
 import { TaskSubmitForm } from "../../components/TaskSubmitForm";
 
 import { HomeContent } from "./styles";
