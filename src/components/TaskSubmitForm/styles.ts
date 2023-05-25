@@ -16,7 +16,7 @@ export const FormContainer = styled.form`
     border: 1px solid ${(props) => props.theme["gray-700"]};
     border-radius: 8px;
     &:focus-visible {
-      border: 1px solid ${(props) => props.theme["purple-500"]};
+      border: 1px solid ${(props) => props.theme["purple-Dark"]};
       outline: none;
     }
   }
@@ -27,13 +27,13 @@ export const FormContainer = styled.form`
     gap: 0.25em;
     border: none;
     border-radius: 8px;
-    background: ${(props) => props.theme["blue-500"]};
+    background: ${(props) => props.theme["blue-Dark"]};
     color: ${(props) => props.theme["gray-100"]};
     transition: background-color 0.15s;
 
     &:focus-visible,
     &:hover {
-      background-color: ${(props) => props.theme["blue-300"]};
+      background-color: ${(props) => props.theme["blue"]};
     }
     svg {
       margin-but: -2rem;
